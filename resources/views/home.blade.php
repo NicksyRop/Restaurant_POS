@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
 
-            <div class="row mt-5">
+            <div class="row mt-5 text-center ">
                 <div class="col-12 col-md-4 mb-4 border border-1">
                     <a href="cashier">
                         <h4>Data Managent</h4>
