@@ -19,6 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+    @notifyCss
 </head>
 <body>
     <div id="app">
@@ -78,8 +79,10 @@
         </nav>
 
         <main class="py-4">
+            <x:notify-messages />
             @yield('content')
         </main>
     </div>
+    @notifyJs
 </body>
 </html>

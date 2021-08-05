@@ -15,7 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-       return view('management.category');
+        $categories = Category::all();
+       return view('management.category')->with('categories',$categories);
     }
 
     /**
@@ -37,15 +38,15 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
 
-        $request->validate($request,[
-            'name' => 'required|unique:categories|max:60'
-        ]);
+        // $request->validate([
+        //     'name' => 'required|unique:categories|max:60'
+        // ]);
         $category = new Category();
 
         $category->category = $request->category;
 
         $category->save();
-
+        notify()->success( $request->name.' has been saved successfully');
 
         return redirect()->route('category.index');
     }
