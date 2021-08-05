@@ -15,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::paginate(5);
        return view('management.category')->with('categories',$categories);
     }
 
@@ -46,7 +46,7 @@ class CategoryController extends Controller
         $category->category = $request->category;
 
         $category->save();
-        notify()->success( $request->name.' has been saved successfully');
+        notify()->success('Category has been saved successfully');
 
         return redirect()->route('category.index');
     }
