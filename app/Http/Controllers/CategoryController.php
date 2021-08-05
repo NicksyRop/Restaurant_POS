@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -34,7 +36,18 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate($request,[
+            'name' => 'required|unique:categories|max:60'
+        ]);
+        $category = new Category();
+
+        $category->category = $request->category;
+
+        $category->save();
+
+
+        return redirect()->route('category.index');
     }
 
     /**

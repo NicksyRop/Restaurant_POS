@@ -18,6 +18,7 @@
         <hr>
 
         <form action="{{ route('category.store')}}" method="POST">
+            @csrf
             <div class="form-group">
                 <label for="cat_name">Category Name</label>
                 <input type="text" name="category" id="" class="form-control">
