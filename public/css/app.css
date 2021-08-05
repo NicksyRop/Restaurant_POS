@@ -16126,3 +16126,8 @@ readers do not read off random characters that represent icons */
   position: static;
   width: auto;
 }
+i{
+    color: green;
+    font-size: 1.5rem;
+}
+
