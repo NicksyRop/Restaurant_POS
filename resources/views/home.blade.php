@@ -7,16 +7,22 @@
 
             <div class="row mt-5">
                 <div class="col-12 col-md-4 mb-4 border border-1">
-                    <h4>Data Managent</h4>
-                    <img src="{{ asset('images/folder-management.svg')}}" class="img-fluid" alt="Data management image">
+                    <a href="cashier">
+                        <h4>Data Managent</h4>
+                        <img src="{{ asset('images/folder-management.svg')}}" class="img-fluid" alt="Data management image">
+                    </a>
                 </div>
                 <div class="col-12 col-md-4 mb-4 border border-1">
-                    <h4>Cashier</h4>
-                    <img src="{{ asset('images/cashier.svg')}}" class="img-fluid" alt="Cashier Image">
+                    <a href="/cashier">
+                        <h4>Cashier</h4>
+                        <img src="{{ asset('images/cashier.svg')}}" class="img-fluid" alt="Cashier Image">
+                    </a>
                 </div>
                 <div class="col-12 col-md-4 mb-4 rounded border border-1">
-                    <h4>Report</h4>
-                    <img src="{{ asset('images/report.svg')}}" class="img-fluid" alt="Report image">
+                    <a href="/reports">
+                        <h4>Report</h4>
+                        <img src="{{ asset('images/report.svg')}}" class="img-fluid" alt="Report image">
+                    </a>
                 </div>
             </div>
         </div>
