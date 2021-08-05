@@ -13,7 +13,21 @@
 
         </ul>
     </div>
-    <div class="col-12 col-md-8">Content</div>
+    <div class="col-12 col-md-8 p-2">
+        <h6>Create Category</h6>
+        <hr>
+
+        <form action="{{ route('category.store')}}" method="POST">
+            <div class="form-group">
+                <label for="cat_name">Category Name</label>
+                <input type="text" name="category" id="" class="form-control">
+            </div>
+
+            <button class="btn btn-primary">Save</button>
+
+        </form>
+
+    </div>
   </div>
 
 </div>

@@ -13,7 +13,12 @@
 
         </ul>
     </div>
-    <div class="col-12 col-md-8">Content</div>
+    <div class="col-12 col-md-8 p-2">
+        <h6>Category</h6>
+        <a href="{{ route('category.create')}}" class="btn btn-success"> <i class="fas fa-plus mr-3"></i>Create Category</a>
+        <hr>
+
+    </div>
   </div>
 
 </div>

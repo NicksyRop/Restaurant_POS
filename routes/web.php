@@ -34,3 +34,4 @@ Route::get('/reports',function(){
 
     return view('reports.index');
 });
+Route::resource('/managent/category','CategoryController');
