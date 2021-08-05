@@ -23,6 +23,9 @@
             <div class="form-group">
                 <label for="cat_name">Category Name</label>
                 <input type="text" name="category" id="" class="form-control">
+                @error('category')
+                <span class="error"  style="color: #bd2c12">{{ $message }}</span>
+                @enderror
             </div>
 
             <button class="btn btn-primary">Save</button>
