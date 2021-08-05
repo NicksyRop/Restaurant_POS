@@ -70,7 +70,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        return view('management.edit')->with('category',$category);
+
     }
 
     /**
@@ -82,7 +84,20 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       $request->validate([
+
+        'category' => 'required|unique:categories|max:60'
+       ]);
+
+       $category = Category::find($id);
+
+       $category->category = $request->category;
+
+       $category->update();
+       notify()->success('Category has been updated successfully');
+       return redirect()->route('category.index');
+
+
     }
 
     /**
@@ -93,6 +108,10 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Category::destroy($id);
+        notify()->success('Category has been deleted successfully');
+
+        return redirect()->route('category.index');
+
     }
 }
