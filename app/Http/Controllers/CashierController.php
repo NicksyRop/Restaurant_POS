@@ -14,12 +14,14 @@ class CashierController extends Controller
 
         foreach($tables as $table){
 
-            $html .= '<div class="col-12">';
+            $html .= '<div class="col-md-2">';
+            $html .= '<button class="btn btn-primary btn-sm">
+            <img  class="img-fluid" src=" '.url('/images/round-table.svg').'" alt="image tabel"/>
+            <br>
 
+            <span>'.$table->name.'</span>
 
-                 $html .= $table->name;
-
-
+            </button>';
             $html .= '</div>';
         }
 
