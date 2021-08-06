@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Table;
 use Illuminate\Http\Request;
 
 class CashierController extends Controller
 {
+
+    public function index(){
+
+        return view('cashier.index')->with('categories',Category::all());
+    }
     public function getTables(){
         $tables = Table::all();
 

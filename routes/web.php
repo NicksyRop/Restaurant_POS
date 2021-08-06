@@ -26,10 +26,7 @@ Route::get('/management',function(){
 
     return view('management.index');
 });
-Route::get('/cashier',function(){
-
-    return view('cashier.index');
-});
+Route::get('/cashier','CashierController@index');
 Route::get('/reports',function(){
 
     return view('reports.index');
