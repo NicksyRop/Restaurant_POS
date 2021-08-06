@@ -4,15 +4,15 @@
 
 <div class="container">
 <div class="row">
-    <div class="col-6 d-flex justify-content-center">
+    <div class="col-6">
         <button class="btn btn-primary " id="btn-show-tables">View All Tables</button>
     </div>
     <div class="col-6">
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs ">
 
             @foreach ($categories as $cat)
             <li class="nav-item">
-                <a class="nav-link" href="#">{{$cat->category}}</a>
+                <a class="nav-link" href="#" data-id={{$cat->id}}>{{$cat->category}}</a>
               </li>
             @endforeach
 
