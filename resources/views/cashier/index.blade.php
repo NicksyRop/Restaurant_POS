@@ -29,11 +29,14 @@
         $.get("/cashier/gettables",function(data){
             $('#table-details').html(data)
             $('#table-details').slideDown('fast')
+            $('#btn-show-tables').html('Hide Tables').removeClass('btn btn-primary').addClass('btn btn-danger')
+
         })
 
 
        }else{
         $('#table-details').slideUp('fast')
+        $('#btn-show-tables').html('Show Table').removeClass('btn btn-danger').addClass('btn btn-success')
 
        }
 
