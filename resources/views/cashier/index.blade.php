@@ -16,9 +16,11 @@
               </li>
             @endforeach
 
-
-
           </ul>
+          <div id="menu-items" class="row mt-5">
+
+
+          </div>
     </div>
 
 
@@ -54,6 +56,16 @@
        }
 
     })
+
+    //ajax to load data for category clicked
+    $('.nav-link').click(function(){
+
+        $.get('/cashier/getCategoryMenus/'+$(this).data('id'),function(data){
+            $('#menu-items').html(data)
+        })
+    })
+
+
     })
 </script>
 @endsection

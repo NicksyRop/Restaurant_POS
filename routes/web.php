@@ -39,3 +39,5 @@ Route::resource('/managent/table','TableController');
 //route to fetch tables for cashier
 
 Route::get('/cashier/gettables','CashierController@getTables');
+
+Route::get('/cashier/getCategoryMenus/{id}','CashierController@getMenu');
