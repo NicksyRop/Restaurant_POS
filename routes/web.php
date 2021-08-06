@@ -37,3 +37,8 @@ Route::get('/reports',function(){
 Route::resource('/managent/category','CategoryController');
 Route::resource('/managent/menu','MenuController');
 Route::resource('/managent/table','TableController');
+
+
+//route to fetch tables for cashier
+
+Route::get('/cashier/gettables','CashierController@getTables');
