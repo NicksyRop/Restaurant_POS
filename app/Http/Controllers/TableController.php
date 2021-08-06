@@ -23,7 +23,7 @@ class TableController extends Controller
      */
     public function create()
     {
-        //
+        return view('management.createtable');
     }
 
     /**
