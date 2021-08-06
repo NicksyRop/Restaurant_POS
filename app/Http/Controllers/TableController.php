@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Table;
 use Illuminate\Http\Request;
 
 class TableController extends Controller
@@ -13,7 +14,7 @@ class TableController extends Controller
      */
     public function index()
     {
-    return view('management.table');
+    return view('management.table')->with('tables',Table::all());
     }
 
     /**
@@ -34,7 +35,16 @@ class TableController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $request->validate([
+          'name' => 'required|unique:tables|max:250'
+      ]);
+
+      $table = new Table();
+      $table->name = $request->name;
+      $table->save();
+      notify()->success('Table created successfully');
+
+      return redirect()->route('table.index');
     }
 
     /**
@@ -56,7 +66,8 @@ class TableController extends Controller
      */
     public function edit($id)
     {
-        //
+        $table = Table::find($id);
+        return view('management.tableedit')->with('table',$table);
     }
 
     /**
@@ -68,7 +79,20 @@ class TableController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+
+            'name' => 'required|unique:tables|max:250'
+        ]);
+
+        $table = new Table();
+
+        $table->name = $request->name;
+        $table->save();
+
+        notify()->success('Table edited successfully');
+
+        return redirect()->route('table.index');
+
     }
 
     /**
@@ -79,6 +103,10 @@ class TableController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Table::destroy($id);
+
+        notify()->success('Tale has been deleted');
+
+        return redirect()->route('table.index');
     }
 }

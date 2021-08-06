@@ -20,16 +20,22 @@
               </tr>
             </thead>
             <tbody>
-                {{-- @foreach ($tables as $table) --}}
+                @foreach ($tables as $table)
                 <tr>
-                    <th scope="row">1</th>
-                    <td>table</td>
-                    <td>empty</td>
-                    <td> edit</td>
-                    <td>Delete</td>
+                    <th scope="row">{{$table->id}}</th>
+                    <td>{{$table->name}}</td>
+                    <td>{{ $table->status}}</td>
+                    <td> <a href="{{ route('table.edit',$table->id)}}" class="btn btn-primary btn-sm">Edit</a></td>
+                    <td>
+                        <form action="{{ route('table.destroy',$table->id)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    </td>
                   </tr>
 
-                {{-- @endforeach --}}
+                @endforeach
 
 
             </tbody>
