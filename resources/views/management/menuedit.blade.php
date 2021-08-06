@@ -10,8 +10,9 @@
         <h6>Edit Menu</h6>
         <hr class="my-4">
 
-        <form action="{{ route('menu.store')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('menu.update',$menu->id)}}" method="POST" enctype="multipart/form-data">
             @csrf
+            @method('PUT')
             <div class="form-group">
                 <label for="cat_name">Menu Name</label>
                 <input type="text" name="menu" id="" class="form-control" value="{{$menu->menu}}">
@@ -58,7 +59,7 @@
                 <select name="category_id" id="" class="form-control">
                    @foreach ($categories as $cat)
 
-                        <option value="{{ $cat->id}}">{{$cat->category}}</option>
+                        <option value="{{ $cat->id}}" {{ $menu->category_id === $cat->id ? 'selected': ""}}>{{$cat->category}}</option>
 
                    @endforeach
                 </select>
