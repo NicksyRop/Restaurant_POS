@@ -36,3 +36,4 @@ Route::get('/reports',function(){
 });
 Route::resource('/managent/category','CategoryController');
 Route::resource('/managent/menu','MenuController');
+Route::resource('/managent/table','TableController');
