@@ -101,7 +101,9 @@ class MenuController extends Controller
      */
     public function edit($id)
     {
-        //
+        $menu = Menu::find($id);
+
+        return view('management.menuedit')->with('menu',$menu)->with('categories',Category::all());
     }
 
     /**

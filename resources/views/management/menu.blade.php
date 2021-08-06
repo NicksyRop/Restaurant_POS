@@ -33,7 +33,7 @@
                     </td>
                     <td>{{$menu->category->category}}</td>
                     <td>{{$menu->description}}</td>
-                    <td><a href="" class="btn btn-primary btn-sm">Edit</a></td>
+                    <td><a href="{{ route('menu.edit',$menu->id)}}" class="btn btn-primary btn-sm">Edit</a></td>
                     <td><a href="" class="btn btn-danger btn-sm">Delete</a></td>
                 </tr>
                 @endforeach
