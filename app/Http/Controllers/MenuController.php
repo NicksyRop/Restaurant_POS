@@ -174,6 +174,20 @@ class MenuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $menu = Menu::find($id);
+
+        //check if imgae exist then delete it
+        if($menu->image != 'noImage.png'){
+
+            $imageName = $menu->image;
+
+            unlink(public_path('menu_images').'/'.$imageName);
+        }
+
+        //delete the rest of the information
+        $menu->delete();
+        notify()->success('Menu item deleted successfully');
+
+        return redirect()->route('menu.index');
     }
 }
