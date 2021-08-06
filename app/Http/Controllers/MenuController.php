@@ -124,7 +124,7 @@ class MenuController extends Controller
 
         $menu = Menu::find($id);
 
-        //check validate image
+        //check if image is provided first validate image
 
         if($request->image){
             $request->validate([
@@ -135,7 +135,7 @@ class MenuController extends Controller
             ]);
 
             if($menu->image != 'noImage.png'){
-
+                //get the name  of the image of the mnenu image then delete
                 $imageName = $menu->image;
 
                 unlink(public_path('menu_images'.'/'.$imageName));
@@ -147,6 +147,8 @@ class MenuController extends Controller
             $request->image->move(public_path('menu_images'),$imageName);
 
         }else{
+
+            //if image is not provided retain the oringinal image
 
             $imageName = $menu->image;
         }
