@@ -45,7 +45,7 @@ class CashierController extends Controller
             $html .= '
             <div class="col-md-3 text-eenter">
 
-                <a href="" class="btn btn-outline-secondary" data-id=" '.$menu->id.'">
+                <a href="" class="btn btn-outline-secondary btn-menu" data-id=" '.$menu->id.'">
 
                     <img class="img-fluid" src="'.url('/menu_images/'.$menu->image).'">
                     <br>
