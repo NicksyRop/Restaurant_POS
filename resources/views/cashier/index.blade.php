@@ -32,8 +32,11 @@
     </div>
 
 </div>
+
 <div id="selected-table">
 
+</div>
+<div id="order-detail">
 
 </div>
 
@@ -75,10 +78,15 @@
         })
     })
 
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
     //load table details
     //specify the row then the table class
-    //this mesns the selected button
-
+    //this means the selected button
     var SELECTED_TABLE_ID ="";
     var SELECTED_TABLE_NAME = "";
     $("#table-details").on('click',".btn-table",function(){
@@ -86,7 +94,7 @@
          SELECTED_TABLE_ID = $(this).data('id');
          SELECTED_TABLE_NAME = $(this).data('name');
 
-        $('#selected-table').html('<br> <h3> Tale : '+SELECTED_TABLE_NAME +'</h3> <hr>')
+        $('#selected-table').html('<br> <h3> Table : '+SELECTED_TABLE_NAME +'</h3> <hr>')
     })
 
     $('#menu-items').on('click',".btn-menu",function(){
@@ -96,7 +104,33 @@
             alert('You first need to select a table for the customer')
         }else{
 
-            alert('you clicked to order')
+        //    / get the id of the selected menu
+            var menu_id = $(this).data('id');
+
+           // alert(menu_id)
+            $.ajax({
+
+                type:"POST",
+
+                data : {
+                    "menu_id" : menu_id,
+                    "table_id": SELECTED_TABLE_ID,
+                    "table_name" : SELECTED_TABLE_NAME,
+                    "quantity" : 1
+                },
+
+                url : "/cashier/orderFood",
+                success : function(data){
+
+                   // console.log(data);
+
+                    $('#order-detail').html(data);
+
+                }
+            })
+
+
+
         }
 
     })

@@ -41,3 +41,4 @@ Route::resource('/managent/table','TableController');
 Route::get('/cashier/gettables','CashierController@getTables');
 
 Route::get('/cashier/getCategoryMenus/{id}','CashierController@getMenu');
+Route::post('/cashier/orderFood','CashierController@orderfood');
