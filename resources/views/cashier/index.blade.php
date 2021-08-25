@@ -99,7 +99,7 @@
 
     $('#menu-items').on('click',".btn-menu",function(){
 
-        if( SELECTED_TABLE_ID == ""){
+        if( SELECTED_TABLE_ID === ""){
 
             alert('You first need to select a table for the customer')
         }else{
@@ -108,9 +108,10 @@
             var menu_id = $(this).data('id');
 
            // alert(menu_id)
+
             $.ajax({
 
-                type:"POST",
+                type:"GET",
 
                 data : {
                     "menu_id" : menu_id,
@@ -127,11 +128,14 @@
                     $('#order-detail').html(data);
 
                 }
+
             })
 
 
 
+
         }
+        location.reload(false);
 
     })
 
