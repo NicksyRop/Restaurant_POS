@@ -11,13 +11,20 @@ Restaurant Point of Sales is a web based application used to manage a restaurant
 The application is bulit using Laravel a php framework.
 
 ## Screenshots: 📷
+### Welcome
 ![Home](https://res.cloudinary.com/kenya-power/image/upload/v1655989847/restaurant/Screenshot_51_dtzxd7.png)
+### Register
 ![Register](https://res.cloudinary.com/kenya-power/image/upload/v1655989840/restaurant/Screenshot_52_kf9uub.png)
+### Login
 ![Login](https://res.cloudinary.com/kenya-power/image/upload/v1655989840/restaurant/Screenshot_53_akb2uf.png)
+### Home
 ![Home](https://res.cloudinary.com/kenya-power/image/upload/v1655989842/restaurant/Screenshot_54_pyqgvs.png)
+### Data Management
 ![data](https://res.cloudinary.com/kenya-power/image/upload/v1655989850/restaurant/Screenshot_55_fdt0qe.png)
-![cashier](https://res.cloudinary.com/kenya-power/image/upload/v1655989850/restaurant/Screenshot_55_fdt0qe.png)
+
+### Menu
 ![menu](https://res.cloudinary.com/kenya-power/image/upload/v1655989839/restaurant/Screenshot_57_nxkun6.png)
+### Cashier
 ![casher](https://res.cloudinary.com/kenya-power/image/upload/v1655989839/restaurant/Screenshot_59_cfnsjz.png)
 
 
