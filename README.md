@@ -11,6 +11,7 @@ Restaurant Point of Sales is a web based application used to manage a restaurant
 The application is bulit using Laravel a php framework.
 
 ## Screenshots: 📷
+.[Home](https://res.cloudinary.com/kenya-power/image/upload/v1655989847/restaurant/Screenshot_51_dtzxd7.png)
 
 
 ## Technologies Used
